@@ -31,6 +31,12 @@
 *.out
 *.app
 
+# CMAKE
+CMakeCache.txt
+CMakeFiles
+cmake*
+Make*
+
 # build
 build/
 lib/
