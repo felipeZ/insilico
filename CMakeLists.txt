@@ -34,13 +34,13 @@ include_directories(${ARMADILLO_INCLUDE_DIRS})
 MESSAGE (STATUS "ARMADILLO PATH:" ${ARMADILLO_LIBRARIES})
 
 # search for HDF5
-find_package(HDF5 REQUIRED)
+find_package(HDF5 COMPONENTS CXX REQUIRED)
 include_directories(${HDF5_INCLUDE_DIRS})
 MESSAGE (STATUS "HDF5 PATH:" ${HDF5_LIBRARIES})
 
-# Add armadillo as third party
-set(ARMADILLO_PREFIX armadillo850)
-set(ARMADILLO_URL ${CMAKE_CURRENT_DIR})
+# # Add armadillo as third party
+# set(ARMADILLO_PREFIX armadillo850)
+# set(ARMADILLO_URL ${CMAKE_CURRENT_DIR})
 # ExternalProject_Add(
 #   URL ${ARMADILLO_URL}
 #   PREFIX ${ARMADILLO_PREFIX}
@@ -54,6 +54,7 @@ add_executable(main ${SOURCES})
 # Compiler standard
 set_property(TARGET main PROPERTY CXX_STANDARD 17)
 
-
 # Linking
-target_link_libraries(main ${ARMADILLO_LIBRARIES})
+set( CMAKE_VERBOSE_MAKEFILE on )
+MESSAGE (STATUS "PATH: " ${HDF5_CXX_LIBRARIES})
+target_link_libraries(main ${ARMADILLO_LIBRARIES} ${HDF5_CXX_LIBRARIES})
