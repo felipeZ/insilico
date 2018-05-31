@@ -1,18 +1,21 @@
 
 #include <iostream>
 #include <armadillo>
+#include "H5Cpp.h"
+using namespace h5;
 
-using namespace std;
 using namespace arma;
+using namespace std;
+
 // using arma::mat;
 // using arma::randu;
 
-int main(void) {
+auto main() ->  int
+{
   mat arr = randu<mat>(4, 4);
   mat brr = randu<mat>(4, 4);
 
   cout << "result: " << (arr * brr) << endl;
 
   return(0);
-
 }
