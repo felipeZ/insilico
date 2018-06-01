@@ -48,7 +48,7 @@ MESSAGE (STATUS "HDF5 PATH:" ${HDF5_LIBRARIES})
 #   )
 
 # create binary
-set(SOURCES ${PROJECT_SOURCE_DIR}/src/main.cpp ${PROJECT_SOURCE_DIR}/include/gaussFunctions.h)
+set(SOURCES ${PROJECT_SOURCE_DIR}/src/main.cc ${PROJECT_SOURCE_DIR}/include/gaussFunctions.h)
 add_executable(main ${SOURCES})
 
 # Compiler standard
