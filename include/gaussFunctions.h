@@ -1,3 +1,6 @@
+#ifndef INSILICO_GAUSSFUNCTIONS_H_
+#define INSILICO_GAUSSFUNCTIONS_H_
+
 #include <string>
 
 /*! Orbital labels  */
@@ -9,6 +12,9 @@ enum class OrbitalType: unsigned char
   F
 };
 
+// struct CGF {
+  
+// }
 
 /* class CGF */
 /* { */
@@ -21,3 +27,5 @@ enum class OrbitalType: unsigned char
 /* { */
   
 /* } */
+
+#endif // INSILICO_GAUSSFUNCTIONS_H_

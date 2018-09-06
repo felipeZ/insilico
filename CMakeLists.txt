@@ -38,14 +38,6 @@ find_package(HDF5 COMPONENTS CXX REQUIRED)
 include_directories(${HDF5_INCLUDE_DIRS})
 MESSAGE (STATUS "HDF5 PATH:" ${HDF5_LIBRARIES})
 
-# # Add armadillo as third party
-# set(ARMADILLO_PREFIX armadillo850)
-# set(ARMADILLO_URL ${CMAKE_CURRENT_DIR})
-# ExternalProject_Add(
-#   URL ${ARMADILLO_URL}
-#   PREFIX ${ARMADILLO_PREFIX}
-#   CONFIGURE_COMMAND ""
-#   )
 
 # create binary
 set(SOURCES ${PROJECT_SOURCE_DIR}/src/main.cc ${PROJECT_SOURCE_DIR}/include/gaussFunctions.h)

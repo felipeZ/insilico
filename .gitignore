@@ -38,6 +38,7 @@ cmake*
 Make*
 
 # build
+bin/
 build/
 lib/
 
