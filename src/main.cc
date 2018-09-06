@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 #include <H5Cpp.h>
-
+#include "funtools.h"
 // using namespace arma;
 // using namespace std;
 

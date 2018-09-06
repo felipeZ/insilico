@@ -24,10 +24,7 @@ MESSAGE (STATUS "ARMADILLO PATH:" ${ARMADILLO_LIBRARIES})
 # search for HDF5
 find_package(HDF5 COMPONENTS CXX REQUIRED)
 include_directories(${HDF5_INCLUDE_DIRS})
-message (STATUS "HDF5 PATH:" ${HDF5_LIBRARIES})
-
-# headers
-include_directories(${PROJECT_SOURCE_DIR}/include)
+message(STATUS "PATH: " ${HDF5_CXX_LIBRARIES})
 
 # Scan these folders
 # add_subdirectory(include)
