@@ -1,5 +1,5 @@
 # create binary
-set(SOURCES main.cc funtools.cc ${PROJECT_SOURCE_DIR}/include/gaussFunctions.h)
+set(SOURCES main.cc funtools.cc funtools.cc) # ${PROJECT_SOURCE_DIR}/include/gaussFunctions.h)
 add_executable(main ${SOURCES})
 
 # Compiler standard
