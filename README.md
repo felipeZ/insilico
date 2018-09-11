@@ -6,5 +6,5 @@ Work in progress
 To compile execute:
 ```
 cmake -H. -Bbuild
-cmake --build build -- -j4
+cmake --build build -- -j2
 ```
