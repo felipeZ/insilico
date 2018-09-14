@@ -1,5 +1,4 @@
 # Specify the minimum version for CMake
-
 cmake_minimum_required(VERSION 3.0.2)
 
 # Project's name
@@ -13,7 +12,7 @@ include(ExternalProject)
 
 # Set the output folder where your program will be created
 set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/bin)
-set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
+# set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 
 # search for armadillo
@@ -24,7 +23,12 @@ MESSAGE (STATUS "ARMADILLO PATH:" ${ARMADILLO_LIBRARIES})
 # search for HDF5
 find_package(HDF5 COMPONENTS CXX REQUIRED)
 include_directories(${HDF5_INCLUDE_DIRS})
-message(STATUS "PATH: " ${HDF5_CXX_LIBRARIES})
+message(STATUS "HDF5 PATH: " ${HDF5_CXX_LIBRARIES})
+
+# search for Eigen
+find_package (Eigen3 3.3 REQUIRED NO_MODULE)
+include_directories(${EIGEN3_INCLUDE_DIR})
+message(STATUS "EIGEN Include: " ${EIGEN3_INCLUDE_DIR})
 
 # Scan these folders
 # add_subdirectory(include)

@@ -1,8 +1,10 @@
 
 #include <armadillo>
+#include <Eigen/Dense>
 #include <iostream>
 #include <string>
 #include <vector>
+
 #include <H5Cpp.h>
 #include "funtools.h"
 // using namespace arma;
@@ -23,7 +25,6 @@ auto read_float_data_space(
 
   hssize_t rank = data_space.getSimpleExtentNdims();
   hssize_t npoints = data_space.getSimpleExtentNpoints();
-  H5S_class_t data_type = data_space.getSimpleExtentType();
 
   // Get the shape of the array
   hsize_t dims[rank];
@@ -62,17 +63,28 @@ int read_data_from_hdf5(
   return(0);
 }
 
+double test_eigen() {
+  auto v1 = Eigen::VectorXd::Random(10);
+  auto v2 = Eigen::VectorXd::Random(10);
+    
+  return v1.dot(v2);
+}
+
 auto main() ->  int
 {
+  // Armadillo test
   mat arr = randu<mat>(4, 4);
   mat brr = randu<mat>(4, 4);
-
   cout << "result: " << (arr * brr) << endl;
 
+  // HDF5 test
   auto path_dataset = "vector";
   auto path_file = "/home/felipe/Primer/insilico/data/test.h5";
+  read_data_from_hdf5(path_file, path_dataset);
 
-  int val = read_data_from_hdf5(path_file, path_dataset);
+  // Eigen test
+  double x = test_eigen();
+  cout << "eigen test: " << x << endl;
   
   return(0);
 }
