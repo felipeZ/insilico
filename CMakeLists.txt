@@ -21,10 +21,11 @@ set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/bin)
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 
-# search for armadillo
-find_package(Armadillo REQUIRED)
-include_directories(${ARMADILLO_INCLUDE_DIRS})
-MESSAGE (STATUS "ARMADILLO PATH:" ${ARMADILLO_LIBRARIES})
+# search for elemental
+find_package(Elemental REQUIRED)
+include_directories(${Elemental_INCLUDE_DIRS})
+message(STATUS "ELEMENTAL Libraries: " ${Elemental_LIBRARIES})
+
 
 # search for HDF5
 find_package(HDF5 COMPONENTS CXX REQUIRED)

@@ -1,18 +1,15 @@
 
-// #include <armadillo>
+
 #include <Eigen/Dense>
 #include <iostream>
 #include <string>
 #include <vector>
 #include "funtools.h"
 
-// using namespace arma;
-// using namespace std;
 
 using std::cout;
 using std::endl;
-// using arma::mat;
-// using arma::randu;
+
 
 double test_eigen() {
   // auto v1 = Eigen::VectorXd::Random(10);
@@ -26,19 +23,8 @@ double test_eigen() {
 
 auto main() ->  int
 {
-  // // Armadillo test
-  // mat arr = randu<mat>(4, 4);
-  // mat brr = randu<mat>(4, 4);
-  // cout << "result: " << (arr * brr) << endl;
-
-  // // HDF5 test
-  // auto path_dataset = "vector";
-  // auto path_file = "/home/felipe/Primer/insilico/data/test.h5";
-  // read_data_from_hdf5(path_file, path_dataset);
-
-  // Eigen test
-  double x = test_eigen();
-  cout << "eigen test: " << x << endl;
+  auto r = test_eigen();
+  cout << "eigen dot: " << r << endl;
   
   return(0);
 }

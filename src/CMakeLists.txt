@@ -17,6 +17,10 @@ add_executable(main ${SOURCES})
 # Compiler standard
 set_property(TARGET main PROPERTY CXX_STANDARD 17)
 
+if(Elemental_LINK_FLAGS)
+  set_target_properties(main PROPERTIES LINK_FLAGS ${Elemental_LINK_FLAGS})
+endif()
+
 # Linking
 set( CMAKE_VERBOSE_MAKEFILE on )
-target_link_libraries(main ${ARMADILLO_LIBRARIES} ${HDF5_CXX_LIBRARIES} Eigen3::Eigen)
+target_link_libraries(main ${ARMADILLO_LIBRARIES} ${HDF5_CXX_LIBRARIES} Eigen3::Eigen ${Elemental_LIBRARIES})
