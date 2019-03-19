@@ -15,4 +15,6 @@ find_package(OpenMP REQUIRED)
 find_package(Eigen3 3.3 REQUIRED CONFIG)
 find_package(range-v3 REQUIRED)
 
+message(STATUS "EIGEN Include: " ${EIGEN3_INCLUDE_DIR})
+
 add_subdirectory(src)
