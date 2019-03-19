@@ -1,32 +1,18 @@
 # Specify the minimum version for CMake
-
-cmake_minimum_required(VERSION 3.0.2)
+cmake_minimum_required(VERSION 3.5)
 
 # Project's name
-project(insilico)
+project(insilico LANGUAGES CXX 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# required modules
-include(CheckIncludeFile)
-include(CheckIncludeFileCXX)
-include(CheckIncludeFiles)
-include(ExternalProject)
+# Compile with optimization by default
+if(NOT CMAKE_BUILD_TYPE)
+  set(CMAKE_BUILD_TYPE Release CACHE STRING "Build type" FORCE)
+endif()
 
-# Set the output folder where your program will be created
-set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/bin)
-set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
-set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR})
+# Required Libraries
+find_package(OpenMP REQUIRED)
+find_package(Eigen3 3.3 REQUIRED CONFIG)
+find_package(range-v3 REQUIRED)
 
-# search for armadillo
-find_package(Armadillo REQUIRED)
-include_directories(${ARMADILLO_INCLUDE_DIRS})
-MESSAGE (STATUS "ARMADILLO PATH:" ${ARMADILLO_LIBRARIES})
-
-# search for HDF5
-find_package(HDF5 COMPONENTS CXX REQUIRED)
-include_directories(${HDF5_INCLUDE_DIRS})
-message(STATUS "PATH: " ${HDF5_CXX_LIBRARIES})
-
-# Scan these folders
-# add_subdirectory(include)
-# add_subdirectory(armadillo)
 add_subdirectory(src)
