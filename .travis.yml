@@ -30,5 +30,5 @@ install:
   - export PATH=${DEPS_DIR}/cmake/bin:${PATH}
     
 script:
-  - cmake -H. -Bbuild -D CMAKE_PREFIX_PATH=/usr/include/eigen3
+  - cmake -H. -Bbuild -DCMAKE_PREFIX_PATH=/usr/include/eigen3
   - cmake --build build
