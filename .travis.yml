@@ -12,7 +12,6 @@ addons:
       - ubuntu-toolchain-r-test
     packages:
       - libeigen3-dev
-      - librange-v3-dev
   
 compiler: gcc
 
