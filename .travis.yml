@@ -30,5 +30,5 @@ install:
   - export PATH=${DEPS_DIR}/cmake/bin:${PATH}
     
 script:
-  - cmake -H. -Bbuild -DEigen3_DIR=/usr/include/eigen3
+  - cmake -H. -Bbuild
   - cmake --build build
