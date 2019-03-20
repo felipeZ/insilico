@@ -2,8 +2,9 @@
 cmake_minimum_required(VERSION 3.5)
 
 # Project's name
-project(insilico LANGUAGES CXX 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
+project(insilico)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED  ON)
 
 # Compile with optimization by default
 if(NOT CMAKE_BUILD_TYPE)

@@ -21,7 +21,7 @@ double test_eigen() {
 auto main() ->  int
 {
   auto r = test_eigen();
-  cout << "eigen dot: " << r << endl;
+  cout << "eigen dot: " << r << "\n";
   
   return(0);
 }
