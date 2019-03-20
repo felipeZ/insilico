@@ -14,7 +14,11 @@ endif()
 # Required Libraries
 find_package(OpenMP REQUIRED)
 find_package(Eigen3 3.3 REQUIRED CONFIG)
-find_package(range-v3 REQUIRED)
+if(NOT EIGEN3_INCLUDE_DIRS)
+  message(STATUS "use EIGEN3_INCLUDE_DIRS: /usr/include/eigen3")
+  set(EIGEN3_INCLUDE_DIRS /usr/include/eigen3)
+endif()
+# find_package(range-v3 REQUIRED)
 
 message(STATUS "EIGEN Include: " ${EIGEN3_INCLUDE_DIR})
 
