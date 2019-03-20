@@ -11,6 +11,7 @@ addons:
     sources:
       - ubuntu-toolchain-r-test
     packages:
+      - cmake
       - libeigen3-dev
   
 compiler: gcc
@@ -23,11 +24,11 @@ env:
   global:
     - DEPS_DIR=${TRAVIS_BUILD_DIR}/deps
 
-install:
-  - CMAKE_URL="https://cmake.org/files/v3.11/cmake-3.11.1.tar.gz"
-  - mkdir -p ${DEPS_DIR}/cmake
-  - travis_retry wget --no-check-certificate --quiet -O - ${CMAKE_URL} | tar --strip-components=1 -xz -C ${DEPS_DIR}/cmake
-  - export PATH=${DEPS_DIR}/cmake/bin:${PATH}
+# install:
+#   - CMAKE_URL="https://cmake.org/files/v3.11/cmake-3.11.1.tar.gz"
+#   - mkdir -p ${DEPS_DIR}/cmake
+#   - travis_retry wget --no-check-certificate --quiet -O - ${CMAKE_URL} | tar --strip-components=1 -xz -C ${DEPS_DIR}/cmake
+#   - export PATH=${DEPS_DIR}/cmake/bin:${PATH}
     
 script:
   - cmake -H. -Bbuild
