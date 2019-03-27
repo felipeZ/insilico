@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.5)
 # Project's name
 project(insilico)
 set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED  ON)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Compile with optimization by default
 if(NOT CMAKE_BUILD_TYPE)
@@ -22,7 +22,14 @@ if(NOT EIGEN3_INCLUDE_DIRS)
 endif()
 include_directories(${Eigen_INCLUDE_DIR})
 
-# find_package(range-v3 REQUIRED)
+# include ranges
+find_package(range-v3 REQUIRED)
+
+# Set the output folder where your program will be created
+set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/bin)
+set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
+set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR})
+
 
 message(STATUS "EIGEN Include: " ${EIGEN3_INCLUDE_DIR})
 

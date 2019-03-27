@@ -10,7 +10,7 @@ endif()
 message(STATUS "CMAKE_CXX_FLAGS: " ${CMAKE_CXX_FLAGS})
 
 # create binary
-set(SOURCES main.cc funtools.cc)
+set(SOURCES main.cc)
 add_executable(main ${SOURCES})
 
 # Linking
