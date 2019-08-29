@@ -20,9 +20,9 @@ branches:
   only:
     - master
 
-env:
-  global:
-    - DEPS_DIR=${TRAVIS_BUILD_DIR}/deps
+# env:
+#   global:
+#     - DEPS_DIR=${TRAVIS_BUILD_DIR}/deps
 
 # install:
 #   - CMAKE_URL="https://cmake.org/files/v3.11/cmake-3.11.1.tar.gz"
