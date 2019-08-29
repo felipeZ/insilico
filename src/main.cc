@@ -1,6 +1,5 @@
 #include <Eigen/Dense>
 #include <iostream>
-
 using std::cout;
 
 double test_eigen() {

@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.10)
 # Project's name
 project(insilico LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED  ON)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 ###############################################################################
 # build setup
@@ -36,6 +36,5 @@ if(NOT EIGEN3_INCLUDE_DIRS)
   message(STATUS "use EIGEN3_INCLUDE_DIRS: /usr/include/eigen3")
   set(EIGEN3_INCLUDE_DIRS /usr/include/eigen3)
 endif()
-
 
 add_subdirectory(src)
