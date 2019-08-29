@@ -1,3 +1,4 @@
+#include "insilico.hpp"
 #include <Eigen/Dense>
 #include <iostream>
 using std::cout;
@@ -12,8 +13,10 @@ double test_eigen() {
 }
 
 auto main() -> int {
-  auto r = test_eigen();
-  cout << "eigen dot: " << r << "\n";
+  insilico::KernelRunner<float> KR;
+  KR.call_kernel();
+  // auto r = test_eigen();
+  // cout << "eigen dot: " << r << "\n";
 
   return (0);
 }

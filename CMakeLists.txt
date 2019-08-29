@@ -15,6 +15,15 @@ set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/bin)
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 
+######################################################################
+# compiler tests
+# these need ot be done early (before further tests).
+#####################################################################
+
+include(CheckCXXCompilerFlag)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 ###############################################################################
 # Compiler flags
 ###############################################################################

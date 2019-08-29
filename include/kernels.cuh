@@ -1,0 +1,1 @@
+void callSumOnGPU(float *dA, float *dB, float *dC);
