@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 3.10)
 
 # Project's name
-project(insilico LANGUAGES CXX)
+project(insilico LANGUAGES CXX CUDA)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -29,7 +29,11 @@ endif(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CXX_FLAGS)
 # Dependencies
 ###############################################################################
 
-find_package(Eigen3 3.3 NO_MODULE)
+# Search for Cuda
+find_package(CUDA REQUIRED)
+
+# Eigen
+find_package(Eigen3 3.3 REQUIRED CONFIG)
 
 # Manually include eigen
 if(NOT EIGEN3_INCLUDE_DIRS)

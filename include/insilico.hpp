@@ -3,8 +3,8 @@
 
 #include <Eigen/Core>
 #include <Eigen/Dense>
-// #include <cublas_v2.h>
-// #include <curand.h>
+#include <cublas_v2.h>
+#include <curand.h>
 
 namespace insilico {
 
