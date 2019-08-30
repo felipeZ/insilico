@@ -1,1 +1,2 @@
-void callSumOnGPU(float *dA, float *dB, float *dC);
+template <typename T>
+void callSumOnGPU(T *dA, T *dB, T *dC, int grids, int blocks);

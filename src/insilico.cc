@@ -39,7 +39,9 @@ void KernelRunner<T>::call_kernel() const {
   T *dB = this -> initialize_mem_arr(ys);
   T *dC = this -> initialize_mem_arr(xs, false);
 
-  callSumOnGPU(dA, dB, dC);
+  auto grids = 1;
+  auto blocks = dim;
+  callSumOnGPU<T>(dA, dB, dC, grids, blocks);
 
   // vector with the result
   Vec<T> zs = Vec<T>::Zero(dim);
@@ -47,7 +49,7 @@ void KernelRunner<T>::call_kernel() const {
   size_t size_C = zs.size() * sizeof(T);
   
   // copy array back to the device  
-  checkCuda(cudaMemcpy(dC, hz, size_C, cudaMemcpyHostToDevice));
+  checkCuda(cudaMemcpy(hz, dC, size_C, cudaMemcpyDeviceToHost));
   // Deallocate memory from the device
   this -> gpu_free(dA);
   this -> gpu_free(dB);
@@ -60,8 +62,8 @@ void KernelRunner<T>::call_kernel() const {
 // explicit instantiations
 template class CudaResources<float>;
 template class CudaResources<double>;  
-template class KernelRunner<float>;
-// template class KernelRunner<double>;  
+// template class KernelRunner<float>;
+template class KernelRunner<double>;
 
 } 
 
